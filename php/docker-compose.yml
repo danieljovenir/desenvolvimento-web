@@ -1,0 +1,25 @@
+networks:
+ lar_das_meninas:
+  external:
+    true
+
+services:
+  php:
+    container_name: php
+    build: .
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - lar_das_meninas
+      
+  postgres:
+    image: postgres:latest
+    container_name: postgres_local
+    ports:
+      - 5432:5432
+    networks:
+      - lar_das_meninas
+    environment:
+      - POSTGRES_PASSWORD=postgres
