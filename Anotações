@@ -15,4 +15,13 @@ CREATE TABLE public.usuarios (
 	CONSTRAINT usuarios_pkey PRIMARY KEY (id)
 );
 
-docker network create lar_das_meninas
+docker network create lar_das_meninas 
+
+-- toda vez que realizar uma alteração, é preciso escrever o comando abaixo para add as alterações no repository
+git add .
+
+-- realizar comentario nas alterações
+git commit -m 'adicionei tal coisa'
+
+-- serve para empurrar as informações para o git
+git push
